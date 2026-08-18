@@ -39,12 +39,12 @@ function loadEnv(string $path): void {
 // Load environment variables from project root
 loadEnv(__DIR__ . '/../.env');
 
-// Database configuration with local environment fallbacks
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'scottish_mammals');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
-define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
+// Database configuration with local environment fallbacks using $_ENV/$_SERVER (for shared hosting compatibility)
+define('DB_HOST', $_ENV['DB_HOST'] ?? $_SERVER['DB_HOST'] ?? 'localhost');
+define('DB_NAME', $_ENV['DB_NAME'] ?? $_SERVER['DB_NAME'] ?? 'scottish_mammals');
+define('DB_USER', $_ENV['DB_USER'] ?? $_SERVER['DB_USER'] ?? 'root');
+define('DB_PASS', $_ENV['DB_PASS'] ?? $_SERVER['DB_PASS'] ?? '');
+define('DB_CHARSET', $_ENV['DB_CHARSET'] ?? $_SERVER['DB_CHARSET'] ?? 'utf8mb4');
 
 /**
  * HTML escape helper function
