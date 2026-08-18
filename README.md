@@ -5,6 +5,7 @@ An interactive, secure, and production-quality database-driven web application t
 ---
 
 ## 1. Technology Stack
+
 The platform is built on standard, justified core web technologies:
 *   **Frontend**: Semantic HTML5, CSS3 Custom Properties (Vanilla CSS), Vanilla JavaScript (no framework dependencies)
 *   **Interactive Maps**: [Leaflet.js](https://leafletjs.com/) (rendered via OpenStreetMap tiles)
@@ -20,47 +21,48 @@ The project follows a clean separation of concerns, separating views (layouts an
 
 ```
 /
-├── public/                     # Public web-accessible directory
-│   ├── index.php               # Home Page & dashboard summary
-│   ├── species.php             # Species Directory listing with search/filter
-│   ├── species-detail.php      # Species Profile details & distribution mapping
-│   ├── observations.php        # Paginated sighting browser with filters
-│   ├── observation-create.php  # Sighting submission form with Leaflet location pin
-│   ├── login.php               # Secure Administrator login portal
-│   ├── logout.php              # Session destruction controller
-│   └── admin/                  # Protected Administration Area
-│       ├── index.php           # Admin panel overview & statistics
-│       ├── species-manage.php  # CRUD manager for species profiles
-│       └── observations-manage.php # Moderation interface for user sightings
+├── admin/                      # Protected moderator dashboard area
+│   ├── index.php               # Admin overview panel
+│   └── observations.php        # Sighting CRUD operations panel
 │
-├── app/                        # Core backend application logic
-│   ├── config/
-│   │   └── database.php        # PDO database connection handler
-│   └── helpers/
-│       ├── auth.php            # Secure session management, timeout & roles
-│       ├── csrf.php            # CSRF token generator and validator
-│       ├── media.php           # Dynamic high-quality SVG image fallbacks
-│       └── validation.php      # Coordinate, date, email verification & XSS escaping
+├── css/                        # Frontend stylesheet assets
+│   ├── reset.css               # Box model and element reset rules
+│   └── style.css               # Bespoke responsive design variables and rules
 │
-├── views/                      # Reusable visual layouts
-│   └── layouts/
-│       ├── header.php          # Global header navigation & meta metadata
-│       └── footer.php          # Global footer, credits, and script injections
+├── database/                   # Database schemas and initialization tools
+│   ├── create_users.php        # BCRYPT credential generation tool
+│   ├── fetch_wikipedia_images.py # Wikipedia PageImages harvester script
+│   ├── populate_images.php     # Remote image ingestion script
+│   ├── species.sql             # Relational SQL schema and pre-populated seed data
+│   └── update_images.sql       # Whitelisted MediaWiki Commons image links seed
 │
-├── assets/                     # Frontend static assets
-│   ├── css/
-│   │   └── style.css           # Global CSS variables, grids, and design tokens
-│   └── js/
-│       ├── map-picker.js       # Form coordinates map pin handler
-│       ├── map-view.js         # Leaflet sighting map visualizer
-│       └── stats.js            # Chart.js statistics bar renderer
+├── images/                     # Static media files
+│   └── placeholder.svg         # SVG vector fallback for missing image links
 │
-├── database/
-│   ├── schema.sql              # Relational SQL schema definitions
-│   └── seed.sql                # Pre-populated realistic Scottish mammal sightings
+├── includes/                   # Reusable server-side layouts and configs
+│   ├── config.php              # Global session management and CSRF tokens init
+│   ├── db.php                  # PDO database connection handler
+│   ├── footer.php              # Global footer credits and script tags
+│   └── header.php              # Global navigation header and responsive logo
 │
-└── tests/
-    └── verify.php              # Automated QA sanity checks
+├── js/                         # Frontend client-side scripts
+│   └── main.js                 # Validation, image modal, and hamburger menu controller
+│
+├── tests/                      # Testing suite
+│   ├── audit_checklist.js      # Automated Playwright E2E compliance linter
+│   ├── record_demo.js          # Playwright walkthrough recording generator
+│   ├── test_images.js          # Image loading verification script
+│   └── verify.php              # Database integrity check
+│
+├── index.php                   # Homepage displaying catalog and statistics
+├── about.php                   # Academic integrity statement and project description
+├── contact.php                 # User message form with secure CSRF verification
+├── species.php                 # Species detailed profile with Leaflet.js mapping
+├── login.php                   # Secure administrator login interface
+├── logout.php                  # Session destruction handler
+├── 40852542.pdf                # Part 2 Critical Report (PDF format)
+├── 40852542_Part2_Critical_Report.docx # Part 2 Critical Report (Word backup format)
+└── RUN_INSTRUCTIONS.txt        # Coursework setup and deployment guide
 ```
 
 ---
@@ -83,19 +85,15 @@ The project follows a clean separation of concerns, separating views (layouts an
    GRANT ALL PRIVILEGES ON scottish_mammals.* TO 'mammals_user'@'localhost';
    FLUSH PRIVILEGES;
    ```
-3. Import the schema definitions to establish database tables:
+3. Import the schema definitions and seed data to establish database tables:
    ```bash
-   mysql -u mammals_user -p scottish_mammals < database/schema.sql
-   ```
-4. Seed the database with realistic species profiles and historical sightings:
-   ```bash
-   mysql -u mammals_user -p scottish_mammals < database/seed.sql
+   mysql -u mammals_user -p scottish_mammals < database/species.sql
    ```
 
 ### Running Locally
-To launch the development server, run the built-in PHP server pointing to the `public/` directory:
+To launch the development server, run the built-in PHP server pointing to the root directory:
 ```bash
-php -S localhost:8000 -t public
+php -S localhost:8000
 ```
 Now, open your web browser and navigate to `http://localhost:8000` to interact with the platform.
 
@@ -106,21 +104,21 @@ To access the secure administrator portal (`/admin/index.php`), use the pre-seed
 
 ---
 
-## 4. Part 1 &rarr; Part 2 Implementation Mapping
+## 4. Part 1 -> Part 2 Implementation Mapping
 
 This implementation corresponds directly to the design justifications and prototype specifications outlined in the Part 1 report:
 
 ### Direct Decisional Mapping
-*   **Part 1: HTML5/CSS3** &rarr; semantic responsive frontend ([style.css](file:///e:/webdesign-part2/public/assets/css/style.css))
-*   **Part 1: PHP/MySQL** &rarr; backend/database implementation ([database.php](file:///e:/webdesign-part2/app/config/database.php) & [schema.sql](file:///e:/webdesign-part2/database/schema.sql))
-*   **Part 1: Species listing** &rarr; species directory ([species.php](file:///e:/webdesign-part2/public/species.php))
-*   **Part 1: Detailed species pages** &rarr; species detail routes ([species-detail.php](file:///e:/webdesign-part2/public/species-detail.php))
-*   **Part 1: Observation posting** &rarr; observation submission form ([observation-create.php](file:///e:/webdesign-part2/public/observation-create.php))
-*   **Part 1: Search/filtering** &rarr; species and observation filtering ([species.php](file:///e:/webdesign-part2/public/species.php) & [observations.php](file:///e:/webdesign-part2/public/observations.php))
-*   **Part 1: Mapping** &rarr; Leaflet observation map ([map-view.js](file:///e:/webdesign-part2/public/assets/js/map-view.js))
-*   **Part 1: Visualisation** &rarr; Chart.js statistics ([stats.js](file:///e:/webdesign-part2/public/assets/js/stats.js))
-*   **Part 1: Accessibility** &rarr; semantic HTML, labels, keyboard support, contrast ([header.php](file:///e:/webdesign-part2/views/layouts/header.php) & [footer.php](file:///e:/webdesign-part2/views/layouts/footer.php))
-*   **Part 1: Progressive enhancement** &rarr; server-rendered functionality + JavaScript enhancement ([species.php](file:///e:/webdesign-part2/public/species.php))
+*   **Part 1: HTML5/CSS3** -> semantic responsive frontend ([style.css](file:///e:/webdesign-part2/css/style.css))
+*   **Part 1: PHP/MySQL** -> backend/database implementation ([db.php](file:///e:/webdesign-part2/includes/db.php) & [species.sql](file:///e:/webdesign-part2/database/species.sql))
+*   **Part 1: Species listing** -> species directory ([index.php](file:///e:/webdesign-part2/index.php))
+*   **Part 1: Detailed species pages** -> species detail routes ([species.php](file:///e:/webdesign-part2/species.php))
+*   **Part 1: Observation posting** -> admin CRUD creation panel ([observations.php](file:///e:/webdesign-part2/admin/observations.php))
+*   **Part 1: Search/filtering** -> species and observation filtering ([index.php](file:///e:/webdesign-part2/index.php))
+*   **Part 1: Mapping** -> Leaflet observation map ([main.js](file:///e:/webdesign-part2/js/main.js))
+*   **Part 1: Visualisation** -> Chart.js statistics ([main.js](file:///e:/webdesign-part2/js/main.js))
+*   **Part 1: Accessibility** -> semantic HTML, labels, keyboard support, contrast ([header.php](file:///e:/webdesign-part2/includes/header.php) & [footer.php](file:///e:/webdesign-part2/includes/footer.php))
+*   **Part 1: Progressive enhancement** -> server-rendered functionality + JavaScript enhancement ([index.php](file:///e:/webdesign-part2/index.php))
 
 ### Implementation Consistency and Traceability
 The integration of real public biodiversity occurrences from GBIF strengthens the delivery of the Part 1 design guidelines by replacing fabricated data with scientifically verified reports. This enhancement directly enriches:
@@ -154,9 +152,11 @@ The integration of real public biodiversity occurrences from GBIF strengthens th
 *   **Mammal Factual Data**: Extracted from public conservation directories, matching native UK biodiversity classifications.
 *   **Images / Icons Fallbacks**: Programmatically generated inside `media.php` as base64 HSL SVG emblems, representing forest wildlife to maintain licensing integrity and fast load times.
 
+---
+
 ## 6. Data Sources & Credits
 
-The Scottish Mammal Observations platform uses biodiversity occurrence data from external public sources. Imported records remain subject to their original licences and attribution requirements. We do not claim ownership of external data.
+The Scottish Mammal Observations platform uses biodiversity occurrence data from external public sources. Imported records remain subject to their original licenses and attribution requirements. We do not claim ownership of external data.
 
 *   **Dataset Name**: GBIF Terrestrial Occurrence Records (Filtered to Scotland)
 *   **Data Provider**: GBIF Network publishers, including NatureScot and local biological recording groups.
