@@ -1,0 +1,10 @@
+/**
+ * Minimal CSS Reset
+ * Students: Create your own stylesheet for visual styling
+ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

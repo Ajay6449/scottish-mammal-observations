@@ -1,0 +1,50 @@
+# Tasks Checklist - Scottish Mammal Observations
+
+- [x] **1. Environment Setup (WSL)**
+  - [x] Update APT and install PHP, PHP-PDO, PHP-MySQL, and MySQL Server in WSL
+  - [x] Configure MySQL root/admin user and start services
+  - [x] Verify PHP and MySQL command execution from host
+- [x] **2. Database Layer**
+  - [x] Create `database/schema.sql` defining tables, keys, and indexes
+  - [x] Create `database/seed.sql` with realistic Scottish mammal profiles and observation sightings
+  - [x] Run imports inside WSL to set up the DB
+- [x] **3. Application Infrastructure & Helpers**
+  - [x] Create `app/config/database.php` for PDO connection management
+  - [x] Create `app/helpers/auth.php` for session authentication and authorization
+  - [x] Create `app/helpers/csrf.php` for state-changing forms token validation
+  - [x] Create `app/helpers/validation.php` for input validation & HTML escaping (XSS protection)
+  - [x] Create reusable template layouts `views/layouts/header.php` and `views/layouts/footer.php`
+- [x] **4. CSS Design System & Static Assets**
+  - [x] Create `assets/css/style.css` defining CSS custom properties (Highland Earth Tone system, responsive grids, accessibility font-sizes, spacing, and `:focus-visible` focus rings)
+- [x] **5. Implement Core Pages**
+  - [x] Home Page (`public/index.php` with landing message, map container, statistics, recent observations)
+  - [x] Species Listing (`public/species.php` with progressive search/filter)
+  - [x] Species Details (`public/species-detail.php` displaying description, habitat, average stats, and map)
+  - [x] Observations List (`public/observations.php` with date, location, species filter and pagination)
+  - [x] Create Observation (`public/observation-create.php` with client/server validation, CSRF, map click coordinate selector)
+  - [x] Login & Session management (`public/login.php` & `public/logout.php`)
+- [x] **6. Client-Side JavaScript Enhancements**
+  - [x] Map View (`assets/js/map-view.js` using Leaflet.js to render observation markers, cluster them if needed, and display accessible popups)
+  - [x] Map Picker (`assets/js/map-picker.js` for Leaflet click-to-fill-coordinates in form)
+  - [x] Visualisation (`assets/js/stats.js` using Chart.js to render responsive charts)
+- [x] **7. Admin Dashboard**
+  - [x] Admin Portal Dashboard (`public/admin/index.php` displaying stats, pending review count)
+  - [x] Manage Species CRUD (`public/admin/species-manage.php` allowing add, edit, delete species)
+  - [x] Review Observations (`public/admin/observations-manage.php` allowing deletion/approval of reports)
+- [x] **8. Verification & QA Audits**
+  - [x] Run PHP syntax check (`php -l`) on all backend files
+  - [x] Run security audits (SQL injection test, XSS test, CSRF token verification, session protection)
+  - [x] Validate responsive layouts and accessibility contrast/labels
+- [x] **9. Project Documentation**
+  - [x] Write a comprehensive `README.md` with installation guides, running instructions, and Part 1 -> Part 2 compliance mapping.
+- [x] **10. Real Biodiversity Data Integration**
+  - [x] Create database migrations to add provenance columns to the `observations` table
+  - [x] Apply migration in WSL MySQL database
+  - [x] Create `database/imports/import_mammals.php` querying the GBIF API inside WSL
+  - [x] Create `database/imports/README.md` documenting dataset references and licenses
+  - [x] Run the importer script to fetch and store real Scottish mammal observations
+  - [x] Update header, footer, style.css, and map-view.js to show "Imported Sighting" indicators
+  - [x] Update public index.php, observations.php, and species-detail.php to query and display provenance data
+  - [x] Update stats.js / Chart.js to aggregate imported records
+  - [x] Perform testing (php syntax, coordinate checks, filters, map popups, pagination)
+  - [x] Document in `DATASET_INTEGRATION.md`, update `README.md`, and update `FINAL_SUBMISSION_AUDIT.md`

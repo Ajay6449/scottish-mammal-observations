@@ -1,0 +1,37 @@
+-- Automated Wikipedia 500px whitelisted thumbnail updates
+USE scottish_mammals;
+
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Myotis_nattereri_%282862347369%29.jpg/500px-Myotis_nattereri_%282862347369%29.jpg' WHERE gbif_species_key = 2432389;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Myotis_daubentoni01.jpg/500px-Myotis_daubentoni01.jpg' WHERE gbif_species_key = 2432439;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Fischotter%2C_Lutra_Lutra.JPG/500px-Fischotter%2C_Lutra_Lutra.JPG' WHERE gbif_species_key = 2433753;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/European_badger_%28Meles_meles_taxus%29_Drenthe.jpg/500px-European_badger_%28Meles_meles_taxus%29_Drenthe.jpg' WHERE gbif_species_key = 2433875;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Common_seal_%28Phoca_vitulina%29_2.jpg/500px-Common_seal_%28Phoca_vitulina%29_2.jpg' WHERE gbif_species_key = 2434793;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Focas_grises_%28Halichoerus_grypus%29%2C_playa_de_Horsey%2C_Norfolk%2C_Inglaterra%2C_2022-11-20%2C_DD_11.jpg/500px-Focas_grises_%28Halichoerus_grypus%29%2C_playa_de_Horsey%2C_Norfolk%2C_Inglaterra%2C_2022-11-20%2C_DD_11.jpg' WHERE gbif_species_key = 2434806;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Bearded_Seal.jpg/500px-Bearded_Seal.jpg' WHERE gbif_species_key = 2434816;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Neomys_fodiens_%28Varsinais-Suomi%2C_Finland%29_1_%28cropped%29.jpg/500px-Neomys_fodiens_%28Varsinais-Suomi%2C_Finland%29_1_%28cropped%29.jpg' WHERE gbif_species_key = 2435767;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Lepus_timidus_-_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%95%D0%B3%D0%BE%D1%80%D0%B5%D0%B9%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%D0%B2_-_96446302.jpeg/500px-Lepus_timidus_-_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%95%D0%B3%D0%BE%D1%80%D0%B5%D0%B9%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%D0%B2_-_96446302.jpeg' WHERE gbif_species_key = 2436756;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Oryctolagus_cuniculus_-_euqirneto_-_419737670_%28cropped%29.jpeg/500px-Oryctolagus_cuniculus_-_euqirneto_-_419737670_%28cropped%29.jpeg' WHERE gbif_species_key = 2436940;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/ApodemusSylvaticus.jpg/500px-ApodemusSylvaticus.jpg' WHERE gbif_species_key = 2437760;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Field_Vole_by_Bruce_McAdam.jpg/500px-Field_Vole_by_Bruce_McAdam.jpg' WHERE gbif_species_key = 2438616;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brown_Rat_%28Rattus_norvegicus%29.jpg/500px-Brown_Rat_%28Rattus_norvegicus%29.jpg' WHERE gbif_species_key = 2439261;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Cervus_nippon_002.jpg/500px-Cervus_nippon_002.jpg' WHERE gbif_species_key = 2440954;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cervus_elaphus_Luc_Viatour_6.jpg/500px-Cervus_elaphus_Luc_Viatour_6.jpg' WHERE gbif_species_key = 2440958;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Water_Vole_on_Boot_Hill_%285592665124%29.jpg/500px-Water_Vole_on_Boot_Hill_%285592665124%29.jpg' WHERE gbif_species_key = 4265185;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Pipistrellus_female-1.jpg/500px-Pipistrellus_female-1.jpg' WHERE gbif_species_key = 5218465;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Plecotus_auritus_2013-2_%28cropped%29.jpg/500px-Plecotus_auritus_2013-2_%28cropped%29.jpg' WHERE gbif_species_key = 5218507;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MinkforWiki.jpg/500px-MinkforWiki.jpg' WHERE gbif_species_key = 5218823;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pine_Marten_%2848173751702%29.jpg/500px-Pine_Marten_%2848173751702%29.jpg' WHERE gbif_species_key = 5218878;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Storm_the_polecat.jpg/500px-Storm_the_polecat.jpg' WHERE gbif_species_key = 5218911;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mustela_nivalis_-British_Wildlife_Centre-4.jpg/500px-Mustela_nivalis_-British_Wildlife_Centre-4.jpg' WHERE gbif_species_key = 5218987;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/R%C3%B8yskatt_%28Mustela_erminea_erminea%29%2C_Lista%2C_Norway.jpg/500px-R%C3%B8yskatt_%28Mustela_erminea_erminea%29%2C_Lista%2C_Norway.jpg' WHERE gbif_species_key = 5219019;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg/500px-Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg' WHERE gbif_species_key = 5219243;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Erinaceus_europaeus_LC0119.jpg/500px-Erinaceus_europaeus_LC0119.jpg' WHERE gbif_species_key = 5219616;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Roe_deer_%28Capreolus_capreolus%29_young_male_Cumnor.jpg/500px-Roe_deer_%28Capreolus_capreolus%29_young_male_Cumnor.jpg' WHERE gbif_species_key = 5220126;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Fallow_deer_in_field.jpg/500px-Fallow_deer_in_field.jpg' WHERE gbif_species_key = 5220136;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Bank_vole_%28Clethrionomys_glareolus%29_Drenthe.jpg/500px-Bank_vole_%28Clethrionomys_glareolus%29_Drenthe.jpg' WHERE gbif_species_key = 5706764;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pipistrellus_pygmaeus01.jpg/500px-Pipistrellus_pygmaeus01.jpg' WHERE gbif_species_key = 5707150;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Mouse_white_background.jpg/500px-Mouse_white_background.jpg' WHERE gbif_species_key = 7429082;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg/500px-Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg' WHERE gbif_species_key = 7705930;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Talpa_europaea_MHNT.jpg/500px-Talpa_europaea_MHNT.jpg' WHERE gbif_species_key = 7872906;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/European_hare_%28Lepus_europaeus%29_Marken_2.jpg/500px-European_hare_%28Lepus_europaeus%29_Marken_2.jpg' WHERE gbif_species_key = 7952072;
+UPDATE species SET image_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sorex-araneus.jpg/500px-Sorex-araneus.jpg' WHERE gbif_species_key = 8316400;

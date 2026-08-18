@@ -1,0 +1,9 @@
+.env
+.idea/
+.vscode/
+*.log
+node_modules/
+*.zip
+*.webm
+*.docx
+*.pdf
