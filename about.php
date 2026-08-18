@@ -7,6 +7,7 @@
  */
 
 $pageTitle = 'About Project';
+$pageDescription = 'Learn about the Scottish Mammal Observations project, its objectives, datasets, technology stack, and academic integrity declarations.';
 $currentPage = 'about';
 
 require_once 'includes/config.php';

@@ -9,6 +9,7 @@
 require_once 'includes/config.php';
 
 $pageTitle = 'Contact Us';
+$pageDescription = 'Get in touch with the Scottish Mammal Observations team. Submit feedback, report issues, or ask questions about biodiversity observations.';
 $currentPage = 'contact';
 
 // Generate CSRF token if not exists

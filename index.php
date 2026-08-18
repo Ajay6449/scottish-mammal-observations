@@ -9,6 +9,7 @@
 require_once 'includes/db.php';
 
 $pageTitle = 'All Species';
+$pageDescription = 'Search, filter, and monitor native Scottish mammal species, and analyze population statistics.';
 $currentPage = 'home';
 $loadCharts = true; // Signals header.php to load Chart.js
 

@@ -23,6 +23,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
 }
 
 $pageTitle = 'Admin Login';
+$pageDescription = 'Access the administrator control panel for the Scottish Mammal Observations platform. Secure login required.';
 $currentPage = 'login';
 $errors = [];
 

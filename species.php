@@ -42,6 +42,7 @@ if (!$species) {
 }
 
 $pageTitle = $species['common_name'];
+$pageDescription = 'Detailed profile, protection status, physical characteristics, and interactive observation mapping for ' . $species['common_name'] . ' (' . $species['species_name'] . ') in Scotland.';
 $loadMap = true; // Signals header.php to load Leaflet CDNs
 
 // Configure Pagination for Observations

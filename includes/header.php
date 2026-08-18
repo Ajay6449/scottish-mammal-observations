@@ -14,6 +14,7 @@ $pathPrefix = isset($inAdmin) && $inAdmin ? '../' : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php echo isset($pageDescription) ? e($pageDescription) : 'An interactive database to catalog, map, and monitor mammal species populations across Scotland. Designed under strict accessibility principles.'; ?>">
     <title><?php echo isset($pageTitle) ? e($pageTitle) . ' - ' : ''; ?>Scottish Mammal Observations Database</title>
     <link rel="stylesheet" href="<?php echo $pathPrefix; ?>css/reset.css">
     <link rel="stylesheet" href="<?php echo $pathPrefix; ?>css/style.css">
