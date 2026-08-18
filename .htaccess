@@ -1,0 +1,10 @@
+# Secure and force HTTPS redirection on Apache servers
+RewriteEngine On
+
+# Redirect HTTP to HTTPS
+RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevent directory index listing
+Options -Indexes
