@@ -1,7 +1,9 @@
-# Secure and force HTTPS redirection on Apache servers
+# Secure and force HTTPS redirection on Apache servers (except localhost)
 RewriteEngine On
 
-# Redirect HTTP to HTTPS
+# Redirect HTTP to HTTPS (only if NOT on localhost/127.0.0.1)
+RewriteCond %{HTTP_HOST} !^localhost$ [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1$
 RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
